@@ -15,7 +15,6 @@ router.post('/createuser',
   body('name', 'Enter a valid name').isLength({ min: 3 }),
   body('email', 'Enter valid email').isEmail(),
   body('password', 'Password must be atleast 5 character').isLength({ min: 5 }),
-
 ],
 async (req, res) => {
   // If errors, return Bad Request and errors
@@ -54,8 +53,8 @@ async (req, res) => {
     // res.json(user);
     res.json({authToken});
   }
-  catch(e) {
-    console.log(e.message);
+  catch(error) {
+    console.log(error.message);
     res.status(500).send('Internal Server Error');
   }
   
