@@ -11,10 +11,12 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-          <Routes>
-            <Route path='/about' element={<About />} />
-            <Route path='/' element={<Home />} />
-          </Routes>
+          <div className='container'>
+            <Routes>
+              <Route path='/about' element={<About />} />
+              <Route path='/' element={<Home />} />
+            </Routes>
+          </div>
         </Router>
       </NoteState>
     </div>
