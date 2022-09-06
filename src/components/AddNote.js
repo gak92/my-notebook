@@ -10,6 +10,7 @@ const AddNote = () => {
   const onHandleClick = (e) => {
     e.preventDefault();
     addNote(note.title, note.description, note.tag);
+    setNote({ title: '', description: '', tag: '' });
   };
 
   const onChange = (e) => {
@@ -29,7 +30,10 @@ const AddNote = () => {
             className="form-control"
             id="title"
             name="title"
+            value={note.title}
             onChange={onChange}
+            minLength={5}
+            required
           />
         </div>
         <div className="mb-3">
@@ -41,7 +45,10 @@ const AddNote = () => {
             className="form-control"
             id="description"
             name="description"
+            value={note.description}
             onChange={onChange}
+            minLength={5}
+            required
           />
         </div>
         <div className="mb-3">
@@ -53,6 +60,7 @@ const AddNote = () => {
             className="form-control"
             id="tag"
             name="tag"
+            value={note.tag}
             onChange={onChange}
           />
         </div>

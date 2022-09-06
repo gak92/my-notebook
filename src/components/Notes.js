@@ -83,6 +83,8 @@ const Notes = () => {
                     name="etitle"
                     value={note.etitle}
                     onChange={onChange}
+                    minLength={5}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -96,6 +98,8 @@ const Notes = () => {
                     name="edescription"
                     value={note.edescription}
                     onChange={onChange}
+                    minLength={5}
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -132,6 +136,7 @@ const Notes = () => {
 
       <div className="row my-3">
         <h1>Your Notes</h1>
+        {notes.length===0 && "No notes to display"}
         {notes.map((note) => {
           return (
             <NoteItem key={note._id} note={note} updateNote={updateNote} />
